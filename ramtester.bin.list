@@ -1,0 +1,366 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+ramtester_g18.bin -- emu8086 assembler version: 4.08  
+ 
+[ 19-04-2021  --  09:04:26 ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       #make_bin#
+[   2]        :                                       
+[   3]        :                                       ; BIN is plain binary format similar to .com format, but not limited to 1 segment;
+[   4]        :                                       ; All values between # are directives, these values are saved into a separate .binf file.
+[   5]        :                                       ; Before loading .bin file emulator reads .binf file with the same file name.
+[   6]        :                                       
+[   7]        :                                       ; All directives are optional, if you don't need them, delete them.
+[   8]        :                                       
+[   9]        :                                       ; set loading address, .bin file will be loaded to this address:
+[  10]        :                                       #LOAD_SEGMENT=0000h#
+[  11]        :                                       #LOAD_OFFSET=0000h#
+[  12]        :                                       
+[  13]        :                                       ; set entry point:
+[  14]        :                                       #CS=0000h#	; same as loading segment
+[  15]        :                                       #IP=0000h#	; same as loading offset
+[  16]        :                                       
+[  17]        :                                       ; set segment registers
+[  18]        :                                       #DS=0000h#	; same as loading segment
+[  19]        :                                       #ES=0000h#	; same as loading segment
+[  20]        :                                       
+[  21]        :                                       ; set stack
+[  22]        :                                       #SS=0000h#	; same as loading segment
+[  23]        :                                       #SP=FFFEh#	; set to top of loading segment
+[  24]        :                                       
+[  25]        :                                       ; set general registers (optional)
+[  26]        :                                       #AX=0000h#
+[  27]        :                                       #BX=0000h#
+[  28]        :                                       #CX=0000h#
+[  29]        :                                       #DX=0000h#
+[  30]        :                                       #SI=0000h#
+[  31]        :                                       #DI=0000h#
+[  32]        :                                       #BP=0000h#
+[  33]        :                                       
+[  34]        :                                       ; add your code here
+[  35]    0000: E9 FD 03                              jmp     st1
+[  36]        :                                       ;proteus allows you to change the reset address - hence changing it to 00000H - so every time
+[  37]        :                                       ;system is reset it will go and execute the instruction at address 00000H - which is jmp st1
+[  38]    0003: 00 00 00 00 00 00 00 00 00 00 00 00   db     1021 dup(0)
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00 00 00 00 00 00 00 00 00 00 00 00 
+                00                                  
+[  39]        :                                       ;jmp st1 will take up 3 bytes in memory - another 509 bytes are filled with '0s'
+[  40]        :                                       ;1021 + 3 bytes = 1024 bytes
+[  41]        :                                       ;first 1 k of memory is IVT - 00000 -00002H will now have the jmp instruction. 00003H - 001FFH will
+[  42]        :                                       ;have 00000 - as vector number 0 to 79H are unused
+[  43]        :                                       ;IVT entry for 80H - address for entry is 80H x 4 is 00200H
+[  44]        :                                       ;code segment will be in ROM
+[  45]    0400: FA                                    st1:      cli
+[  46]        :                                       ; intialize ds, es,ss to start of RAM - that is 01000h - as you need r/w capability for DS,ES & SS
+[  47]        :                                       ; pl note you cannot use db to store data in the RAM.You have to use a MOV instruction.
+[  48]        :                                       ; so if you want to do dat1 db 69H to the RAM- We have to use the equ command
+[  49]        :                                       ; dat1 equ 0002h
+[  50]        :                                       ; mov al,69h
+[  51]        :                                       ; mov dat1,al
+[  52]        :                                       ;0002H is the offset in data segmnet where you are storing the data.
+[  53]        :                                       ;db can be used only to store data in code segment
+[  54]    0401: B8 00 10                              mov  ax,01000h ;initialising segments with start of RAM1
+[  55]    0404: 8E D8                                 mov  ds,ax
+[  56]    0406: 8E C0                                 mov  es,ax
+[  57]    0408: 8E D0                                 mov  ss,ax
+[  58]    040A: BC FE FF                              mov  sp,0FFFEH
+[  59]        :                                       
+[  60]        :                                       		
+[  61]    040D: B0 80                                 mov  al,10000000b  ;control word of first 8255A initialising port b and c as output.
+[  62]    040F: E6 06                                 	  out  06h,al
+[  63]        :                                       
+[  64]        :                                       		
+[  65]    0411: B0 89                                 mov  al,10001001b ; control word of second 8255A initialising port a,b as output and port c as input
+[  66]    0413: E6 0E                                 out  0Eh,al
+[  67]        :                                       
+[  68]        :                                       
+[  69]    0415: E4 0C                                 POLLING : in   al,0Ch  ; ;Keep polling port C until you get 1 from the Test switch
+[  70]    0417: B3 01                                 mov  bl,01h
+[  71]    0419: 3A D8                                 cmp  bl,al
+[  72]    041B: 90 90                                 jnz POLLING
+[  73]    041D:                                       TRUE:
+[  74]    041D: BA 00 00                              mov dx,00h
+[  75]        :                                       
+[  76]    0420:                                       START:
+[  77]    0420: B7 FE                                 mov bh,11111110b ;for comparing 0
+[  78]    0422: B5 01                                 mov ch,00000001b ;for comparing 1
+[  79]        :                                       
+[  80]        :                                       
+[  81]    0424: B1 08                                 mov cl,08			
+[  82]        :                                       
+[  83]        :                                       ;for reading and writing 1's
+[  84]    0426:                                       START1:
+[  85]    0426: 8A C2                                 mov al,dl
+[  86]    0428: E6 08                                 out 08h,al
+[  87]    042A: 8A C6                                 mov al,dh
+[  88]    042C: 24 BF                                 and al,10111111b      ;Turn on write enable of 6164
+[  89]    042E: 0C 20                                 or  al,00100000b      ;Turn off read enable!
+[  90]    0430: 24 7F                                 and al,01111111b      ;Turn on CE!
+[  91]        :                                       
+[  92]    0432: E6 0A                                 out 0Ah,al	
+[  93]        :                                       		
+[  94]    0434: B0 80                                 mov  al,10000000b    ;control word of 3rd 8255A initialising port A as output to write data
+[  95]    0436: E6 16                                 out  16h,al
+[  96]        :                                       
+[  97]    0438: 8A C5                                 mov al,ch    ; Write from Port A of 3rd 8255 to 6164
+[  98]    043A: E6 10                                 out 10h,al
+[  99]        :                                       		
+[ 100]    043C: 8A C6                                 mov al,dh
+[ 101]    043E: 24 DF                                 and al,11011111b      ;Turn on read enable
+[ 102]    0440: 0C 40                                 or  al,01000000b      ;Turn off write enable dash
+[ 103]    0442: 24 7F                                 and  al,01111111b     ;Turn on CE
+[ 104]    0444: E6 0A                                 out 0Ah,al
+[ 105]        :                                       		
+[ 106]    0446: B0 90                                 mov  al,10010000b    ;control word of 3rd 8255A initialising port A as input to read data
+[ 107]    0448: E6 16                                 out  16h,al
+[ 108]        :                                       		
+[ 109]    044A: E4 10                                 	  in al,10h
+[ 110]        :                                       
+[ 111]    044C: 8A DD                                 mov bl,ch
+[ 112]    044E: 3A C3                                 cmp al,bl
+[ 113]    0450: 75 3D                                 jnz FAIL
+[ 114]        :                                       
+[ 115]        :                                       ;for reading and writing 0's	
+[ 116]        :                                       
+[ 117]    0452: 8A C2                                 mov al,dl
+[ 118]    0454: E6 08                                 out 08h,al
+[ 119]        :                                       
+[ 120]    0456: 8A C6                                 mov al,dh
+[ 121]    0458: 24 BF                                 and al,10111111b      ;Turn on write enable dash
+[ 122]    045A: 0C 20                                 or  al,00100000b      ;Turn off read enable
+[ 123]    045C: 24 7F                                 and  al,01111111b     ;Turn on CE
+[ 124]        :                                       
+[ 125]    045E: E6 0A                                 out 0Ah,al
+[ 126]        :                                       
+[ 127]    0460: B0 80                                 	  mov  al,10000000b    ;control word of 3rd 8255A initialising port A as output to write data
+[ 128]    0462: E6 16                                 out  16h,al
+[ 129]        :                                       
+[ 130]    0464: 8A C7                                 mov al,bh     ; Write from Port A of 3rd 8255 to 6164
+[ 131]    0466: E6 10                                 out 10h,al    	
+[ 132]        :                                       
+[ 133]    0468: 8A C6                                 mov al,dh
+[ 134]    046A: 24 DF                                 and al,11011111b      ;Turn on read enable
+[ 135]    046C: 0C 40                                 or  al,01000000b      ;Turn off write enable dash
+[ 136]    046E: 24 7F                                 and al,01111111b     ;Turn on CE
+[ 137]    0470: E6 0A                                 out 0Ah,al
+[ 138]        :                                       
+[ 139]        :                                       
+[ 140]        :                                       
+[ 141]    0472: B0 90                                 mov  al,10010000b    ;control word of 3rd 8255A initialising port A as input to write data
+[ 142]    0474: E6 16                                 out  16h,al
+[ 143]        :                                       
+[ 144]    0476: E4 10                                 in al,10h
+[ 145]        :                                       
+[ 146]    0478: 8A DF                                 mov bl,bh
+[ 147]    047A: 3A C3                                 cmp al,bl
+[ 148]    047C: 75 11                                 jnz FAIL
+[ 149]        :                                       
+[ 150]        :                                       
+[ 151]    047E: D0 C5                                 ROL ch,1
+[ 152]    0480: D0 C7                                 ROL bh,1
+[ 153]        :                                       
+[ 154]    0482: FE C9                                 dec cl
+[ 155]    0484: 75 A0                                 jnz START1
+[ 156]    0486: 42                                    inc dx
+[ 157]    0487: 81 FA 00 20                           cmp dx,8192d
+[ 158]    048B: 74 43                                 	  jz PASS
+[ 159]    048D: EB 91                                 jmp  START
+[ 160]        :                                       		
+[ 161]        :                                       ;to display FAIL on LED
+[ 162]        :                                       
+[ 163]        :                                       
+[ 164]    048F: B0 FF                                 FAIL:     mov al,0FFh
+[ 165]    0491: E6 04                                 out 04h,al
+[ 166]        :                                       
+[ 167]        :                                       
+[ 168]    0493: B0 01                                 mov al,01h
+[ 169]    0495: E6 02                                 out 02h,al
+[ 170]        :                                       
+[ 171]    0497: B0 8E                                 mov al,8eh        ;For displaying  F
+[ 172]    0499: E6 04                                 out 04h,al
+[ 173]        :                                       
+[ 174]        :                                       
+[ 175]    049B: B0 02                                 mov al,02h
+[ 176]    049D: E6 02                                 out 02h,al
+[ 177]        :                                       
+[ 178]    049F: B0 88                                 mov al,88h        ;For displaying A
+[ 179]    04A1: E6 04                                 out 04h,al
+[ 180]        :                                       
+[ 181]    04A3: B0 00                                 mov al,00
+[ 182]    04A5: E6 02                                 out 02h,al
+[ 183]        :                                       
+[ 184]    04A7: B0 FF                                 mov al,0FFh
+[ 185]    04A9: E6 04                                 out 04h,al
+[ 186]        :                                       
+[ 187]    04AB: B0 04                                 mov al,04h
+[ 188]    04AD: E6 02                                 out 02h,al
+[ 189]        :                                       
+[ 190]        :                                       
+[ 191]    04AF: B0 F9                                 mov al,0F9h        ;For displaying I
+[ 192]    04B1: E6 04                                 out 04h,al
+[ 193]        :                                       
+[ 194]        :                                       
+[ 195]    04B3: B0 08                                 mov al,08h
+[ 196]    04B5: E6 02                                 out 02h,al
+[ 197]        :                                       
+[ 198]        :                                       
+[ 199]    04B7: B0 C7                                 mov al,0c7h        ;For displaying L
+[ 200]    04B9: E6 04                                 out 04h,al
+[ 201]        :                                       
+[ 202]    04BB: B0 00                                 mov al,00
+[ 203]    04BD: E6 02                                 out 02h,al
+[ 204]        :                                       
+[ 205]    04BF: B0 FF                                 mov al,0ffh
+[ 206]    04C1: E6 04                                 out 04h,al
+[ 207]        :                                       ; for the recursion of the program
+[ 208]    04C3: E4 0C                                 in   al,0Ch
+[ 209]    04C5: B3 01                                 mov  bl,01h
+[ 210]    04C7: 3A D8                                 cmp  bl,al
+[ 211]    04C9: 75 03 E9 4F FF                        jz TRUE
+[ 212]        :                                       
+[ 213]        :                                       
+[ 214]    04CE: EB BF                                 jmp FAIL
+[ 215]        :                                       
+[ 216]        :                                       ;to display Pass on LED
+[ 217]        :                                       
+[ 218]        :                                       
+[ 219]        :                                       
+[ 220]    04D0: B0 FF                                 PASS:      mov al,0FFh
+[ 221]    04D2: E6 04                                 out 04,al
+[ 222]        :                                       
+[ 223]        :                                       
+[ 224]    04D4: B0 01                                 mov al,01h
+[ 225]    04D6: E6 02                                 out 02h,al
+[ 226]        :                                       
+[ 227]    04D8: B0 8C                                 mov al,8ch       ;for displaying  P
+[ 228]    04DA: E6 04                                 out 04,al
+[ 229]        :                                       
+[ 230]    04DC: B0 02                                 mov al,02h
+[ 231]    04DE: E6 02                                 out 02h,al
+[ 232]        :                                       
+[ 233]    04E0: B0 88                                 mov al,88h       ;for displaying A
+[ 234]    04E2: E6 04                                 out 04,al
+[ 235]        :                                       
+[ 236]    04E4: B0 04                                 mov al,04h
+[ 237]    04E6: E6 02                                 out 02h,al
+[ 238]        :                                       
+[ 239]    04E8: B0 92                                 mov al,92h	   ;for displaying S
+[ 240]    04EA: E6 04                                 out 04,al
+[ 241]        :                                       
+[ 242]        :                                       
+[ 243]    04EC: B0 08                                 mov al,08h
+[ 244]    04EE: E6 02                                 out 02h,al
+[ 245]        :                                       
+[ 246]    04F0: B0 92                                 mov al,92h	  ;for displaying S
+[ 247]    04F2: E6 04                                 out 04,al
+[ 248]        :                                       
+[ 249]    04F4: B0 00                                 mov al,00
+[ 250]    04F6: E6 02                                 out 02h,al
+[ 251]        :                                       
+[ 252]    04F8: B0 FF                                 mov al,0ffh
+[ 253]    04FA: E6 04                                 out 04h,al
+[ 254]        :                                       		;this for the recursion of the program
+[ 255]    04FC: E4 0C                                 in  al,0Ch
+[ 256]    04FE: B3 01                                 mov bl,01h
+[ 257]    0500: 3A D8                                 cmp bl,al
+[ 258]    0502: 75 03 E9 16 FF                        jz TRUE
+[ 259]        :                                       
+[ 260]        :                                       
+[ 261]    0507: EB C7                                 jmp PASS
+[ 262]        :                                       
+[ 263]        :                                       
+ 
+===================================================================================================
+ 
+
+
+
+
+===================================================================================================
